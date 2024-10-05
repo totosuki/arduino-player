@@ -435,6 +435,8 @@ void loop() {
       u8x8.setCursor(2, 2);
       u8x8.print("   Nanika   ");
     }
+    min = 0;
+    sec = 0;
   }
 
   beforevalue = value;
