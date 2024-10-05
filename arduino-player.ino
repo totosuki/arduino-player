@@ -420,11 +420,15 @@ void loop() {
     if (value == 0) {
       u8x8.setCursor(2, 2);
       u8x8.print("  Prologue  ");
+      u8x8.setCursor(7, 5);
+      u8x8.print("/0:31");
       play_prologue();
     }
     else if (value  == 1) {
       u8x8.setCursor(2, 2);
       u8x8.print("Shape of You");
+      u8x8.setCursor(7, 5);
+      u8x8.print("/2:45");
       play_shape_of_you();
     }
     else if (value == 2) {
