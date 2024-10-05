@@ -30,12 +30,19 @@ void mydelay(int dist) {
   }
 
   char tmp[3] = "";
-  char playtime[10] = "";
+  char playtime[5] = {'0',':','0','0','\0'};
+
   itoa(min, tmp, 10);
-  strcat(playtime, tmp);
-  strcat(playtime, ":");
+  playtime[0] = tmp[0];
+
   itoa(sec, tmp, 10);
-  strcat(playtime, tmp);
+  if (sec < 10) {
+    playtime[3] = tmp[0];
+  }
+  else {
+    playtime[2] = tmp[0];
+    playtime[3] = tmp[1];
+  }
 
   u8x8.setCursor(3, 5);
   u8x8.print(playtime);
