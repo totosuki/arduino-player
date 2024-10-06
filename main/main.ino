@@ -17,7 +17,7 @@ void mytone(int freq, int dist) {
 }
 
 void mydelay(int dist) {
-  delay(dist);
+  unsigned long st = millis();
 
   buffer += dist;
   while (buffer >= 1000) {
@@ -46,6 +46,10 @@ void mydelay(int dist) {
 
   u8x8.setCursor(3, 5);
   u8x8.print(playtime);
+
+  while (millis() - st < dist) {
+    // 何も処理をせず待機
+  }
 }
 
 void play_prologue() {
