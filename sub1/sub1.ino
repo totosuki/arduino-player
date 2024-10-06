@@ -89,7 +89,8 @@ void FTHLOOP(){
   one_X(CoFS2,CoFS3,CoFS3);
   one_X(CoA2,CoA3,CoA3);
 }
-void loop() {
+
+void play_shape_of_you() {
   FSTLOOP(2);                 // 1 ~ 4.4
   SNDLOOP(3);                 // 5 ~ 10.4
   threeLOOP(CoCS3,CoE3,CoCS3);      // 11 ~ 12.2
@@ -119,6 +120,8 @@ void loop() {
   mytone(CoCS3,300);
   TRDLOOP_C(8);
   mytone(CoCS3,2400);
+}
 
-  delay(10000);
+void loop() {
+  
 }
