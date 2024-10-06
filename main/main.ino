@@ -12,7 +12,7 @@ int sec = 0;
 int buffer = 0;
 
 void mytone(int freq, int dist) {
-  tone(5, freq, dist - 50);
+  tone(5, freq * 4, dist - 50);
   mydelay(dist);
 }
 
@@ -380,6 +380,323 @@ void play_shape_of_you() {
   mytone(CoCS5, 2400);  // 70
 }
 
+void ONELOOP(int i) {
+  mytone(i, 125);
+  mytone(i, 125);
+  mytone(CoD5, 250);
+
+  mytone(CoA4, 375);
+  mytone(CoGS4, 187.5);
+  mydelay(62.5);
+  mytone(CoG4, 250);
+  mytone(CoF4, 250);
+  mytone(CoD4, 125);
+  mytone(CoF4, 125);
+  mytone(CoG4, 125);
+}
+
+void TWOLOOP(int j,int k) {
+  mytone(j,250);
+  mytone(j,250);
+  mydelay(125);
+  mytone(j,250);
+  mytone(k,250);
+  mytone(k,250);
+  mydelay(375);
+  mytone(k,250);
+}
+
+void FSTLOOP(int l) {
+  for(int nl = 0; nl < l; nl++){
+    ONELOOP(CoD4);
+    ONELOOP(CoC4);
+    ONELOOP(CoB3);
+    ONELOOP(CoAS3);
+  }
+}
+
+void SNDLOOP(int m){
+  for(int nm = 0; nm < m; nm++){
+    mydelay(1000);
+    mytone(CoF4, 125);
+    mytone(CoD4, 125);
+    mytone(CoF4, 125);
+    mytone(CoG4, 125);
+    mytone(CoGS4, 125);
+    mytone(CoG4, 125);
+    mytone(CoF4, 125);
+    mytone(CoD4, 125);
+
+    mytone(CoGS4, 62.5);
+    mytone(CoG4, 62.5);
+    mytone(CoF4, 62.5);
+    mytone(CoD4, 62.5);
+    mytone(CoF4, 250);
+    mytone(CoG4, 1125);
+    mytone(CoGS4, 250);
+    mytone(CoA4, 125);
+
+    mytone(CoC5, 250);
+    mytone(CoA4, 125);
+    mytone(CoGS4, 125);
+    mytone(CoG4, 125);
+    mytone(CoF4, 125);
+    mytone(CoD4, 125);
+    mytone(CoE4, 125);
+    mytone(CoF4, 250);
+    mytone(CoG4, 250);
+    mytone(CoA4, 250);
+    mytone(CoC5, 250);
+
+    mytone(CoCS5, 250);
+    mytone(CoGS4, 250);
+    mytone(CoGS4, 125);
+    mytone(CoG4, 125);
+    mytone(CoF4, 125);
+    mytone(CoG4, 1125);
+
+    mytone(CoF4, 250);
+    mytone(CoG4, 250);
+    mytone(CoA4, 250);
+    mytone(CoF5, 250);
+    mytone(CoE5, 500);
+    mytone(CoD5, 500);
+
+    mytone(CoE5, 500);
+    mytone(CoF5, 500);
+    mytone(CoG5, 500);
+    mytone(CoE5, 500);
+
+    mytone(CoA5, 1000);
+    mytone(CoA5, 125);
+    mytone(CoGS5, 125);
+    mytone(CoG5, 125);
+    mytone(CoFS5, 125);
+    mytone(CoF5, 125);
+    mytone(CoE5, 125);
+    mytone(CoDS5, 125);
+    mytone(CoD5, 125);
+
+    mytone(CoCS5, 1000);
+    mytone(CoDS5, 1000);
+
+  
+  }
+}
+
+void TRDLOOP_A(int n){
+  for(int nn = 0; nn < n; nn++){
+    TWOLOOP(CoAS3,CoAS3);
+    TWOLOOP(CoC4,CoC4);
+    TWOLOOP(CoD4,CoCS4);
+    TWOLOOP(CoC4,CoB3);
+  }
+}
+
+void TRDLOOP_B(int o){
+  for(int no = 0; no < o; no++){
+    TWOLOOP(CoAS3,CoAS3);
+    TWOLOOP(CoC4,CoC4);
+    TWOLOOP(CoD4,CoD4);
+    TWOLOOP(CoD4,CoD4);
+  }
+}
+
+void TRDLOOP() {
+  TRDLOOP_A(1);
+  TRDLOOP_B(1);
+  TRDLOOP_A(1);
+  TRDLOOP_B(1);
+}
+
+void play_megalovanila() {
+  FSTLOOP(4);
+
+  mytone(CoF4, 250);
+  mytone(CoF4, 125);
+  mytone(CoF4, 125);
+  mydelay(125);
+  mytone(CoF4, 250);
+  mytone(CoF4, 250);
+  mytone(CoD4, 250);
+  mytone(CoD4, 500);
+  mydelay(125);
+
+  mytone(CoF4, 250);
+  mytone(CoF4, 125);
+  mytone(CoF4, 125);
+  mydelay(125);
+  mytone(CoG4, 250);
+  mytone(CoGS4, 250);
+  mytone(CoG4, 41);   //
+  mydelay(1);
+  mytone(CoG4, 41); //  微調整区間 125ms
+  mydelay(1);
+  mytone(CoG4, 41);   //
+  mytone(CoF4, 125);
+  mytone(CoD4, 125);
+  mytone(CoF4, 125);
+  mytone(CoG4, 125);
+  mydelay(250);
+
+  mytone(CoF4, 250);
+  mytone(CoF4, 125);
+  mytone(CoF4, 125);
+  mydelay(125);
+  mytone(CoG4, 250);
+  mytone(CoGS4, 125);
+  mydelay(125);
+  mytone(CoA4, 250);
+  mytone(CoC5, 250);
+  mytone(CoA4, 375);
+
+  mytone(CoD5, 250);
+  mytone(CoD5, 250);
+  mytone(CoD5, 125);
+  mytone(CoA4, 125);
+  mytone(CoD5, 125);
+  mytone(CoC5, 625);
+  mytone(CoG5, 500);
+
+  mytone(CoA5, 250);
+  mytone(CoA5, 125);
+  mytone(CoA5, 125);
+  mydelay(125);
+  mytone(CoA5, 250);
+  mytone(CoA5, 250);
+  mytone(CoG5, 125);
+  mydelay(125);
+  mytone(CoG5, 625);
+
+  mytone(CoA5, 250);
+  mytone(CoA5, 125);
+  mytone(CoA5, 125);
+  mydelay(125);
+  mytone(CoA5, 250);
+  mytone(CoG5, 125);
+  mydelay(125);
+  mytone(CoA5, 125);
+  mydelay(125);
+  mytone(CoD6, 125);
+  mydelay(125);
+  mytone(CoA5, 125);
+  mytone(CoG5, 250);
+
+  mytone(CoD6, 250);
+  mytone(CoA5, 250);
+  mytone(CoG5, 250);
+  mytone(CoF5, 250);
+  mytone(CoC6, 250);
+  mytone(CoG5, 250);
+  mytone(CoF5, 250);
+  mytone(CoE5, 250);
+
+  mytone(CoAS4, 250);
+  mytone(CoC5, 125);
+  mytone(CoD5, 125);
+  mydelay(125);
+  mytone(CoF5, 250);
+  mytone(CoC6, 1125);
+
+  SNDLOOP(2);
+
+  mytone(CoAS3, 1500);
+  mytone(CoF4, 500);
+
+  mytone(CoE4, 1000);
+  mytone(CoD4, 1000);
+
+  mytone(CoF4, 4000);
+
+  mytone(CoAS3, 1500);
+  mytone(CoF4, 500);
+
+  mytone(CoE4, 1000);
+  mytone(CoD4, 1000);
+
+  mytone(CoD4, 1000);
+  mytone(CoD4, 83);   //
+  mytone(CoCS4, 83); //  微調整区間 250ms
+  mytone(CoC4, 83);   
+  mydelay(1);           //
+
+  mytone(CoB3, 83);   //
+  mytone(CoAS3, 83); //  微調整区間 250ms
+  mytone(CoA3, 83);   //
+  mydelay(1);           //
+
+  mytone(CoGS3, 83);   //
+  mytone(CoG3, 83); //  微調整区間 250ms
+  mytone(CoFS3, 83);   //
+  mydelay(1);           //
+
+  mytone(CoF3, 83);   //
+  mytone(CoE3, 83); //  微調整区間 250ms
+  mytone(CoDS3, 83);   //
+  mydelay(1);           //
+
+  mytone(CoD3, 2000);
+
+  mytone(CoAS3, 1500);
+  mytone(CoF4, 500);
+
+  mytone(CoE4, 1000);
+  mytone(CoD4, 1000);
+
+  mytone(CoF4, 2000);
+
+  mydelay(250);
+  mytone(CoF4, 125);
+  mydelay(125);
+  mytone(CoG4, 250);
+  mytone(CoF4, 125);
+  mytone(CoC4, 125);
+  mydelay(125);
+  mytone(CoC4, 250);
+  mytone(CoA3, 250);
+  mytone(CoG3, 125);
+  mytone(CoA3, 125);
+  mytone(CoC4, 125);
+
+  mytone(CoAS3, 1500);
+  mytone(CoF4, 500);
+
+  mytone(CoE4, 1000);
+  mytone(CoD4, 1000);
+
+  mytone(CoD4, 125);
+  mydelay(125);
+  mytone(CoF4, 250);
+  mytone(CoE4, 375);
+  mytone(CoC4, 125);
+  mydelay(125);
+  mytone(CoE4, 250);
+  mytone(CoD4, 250);
+  mytone(CoG3, 125);
+  mytone(CoA3, 125);
+  mytone(CoC4, 125);
+
+  mydelay(250);
+  mytone(CoF4, 250);
+  mytone(CoE4, 375);
+  mytone(CoC4, 125);
+  mydelay(125);
+  mytone(CoE4, 250);
+  mytone(CoD4, 250);
+  mytone(CoG3, 125);
+  mytone(CoA3, 125);
+  mytone(CoC4, 125);
+
+  TRDLOOP();
+
+  ONELOOP(CoAS3);
+  ONELOOP(CoC4);
+  ONELOOP(CoD4);
+  ONELOOP(CoD4);
+  ONELOOP(CoAS3);
+  ONELOOP(CoC4);
+}
+
 void clear_display() {
   for (int i=0;i<8;i++) {
     u8x8.setCursor(0, i);
@@ -411,7 +728,7 @@ void loop() {
     }
     else if (value == 2) {
       u8x8.setCursor(2, 3);
-      u8x8.print("Nanika");
+      u8x8.print("MEGALOVANILA");
     }
   }
 
@@ -433,7 +750,10 @@ void loop() {
     }
     else if (value == 2) {
       u8x8.setCursor(2, 2);
-      u8x8.print("   Nanika   ");
+      u8x8.print("MEGALOVANILA");
+      u8x8.setCursor(7, 5);
+      u8x8.print("/2:35");
+      play_megalovanila();
     }
     min = 0;
     sec = 0;
