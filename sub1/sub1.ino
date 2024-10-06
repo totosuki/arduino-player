@@ -227,8 +227,6 @@ void play_shape_of_you() {
   mytone(CoCS3,300);
   TRDLOOP_C(8);
   mytone(CoCS3,2400);
-
-  mydelay(10000);
 }
 
 void clear_display() {
