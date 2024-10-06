@@ -12,7 +12,7 @@ int sec = 0;
 int buffer = 0;
 
 void mytone(int freq, int dist) {
-  tone(5, freq * 4, dist - 50);
+  tone(5, freq * 4, dist - 10);
   mydelay(dist);
 }
 
