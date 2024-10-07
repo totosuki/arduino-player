@@ -234,7 +234,7 @@ void MEGA_ONELOOP(int a, int b) {
   mytone(a, 125);
   mytone(a, 250);
   mytone(b, 125);
-  delay(125);
+  mydelay(125);
   mytone(b, 250);
   mytone(b, 125);
   mytone(b, 125);
@@ -322,7 +322,7 @@ void MEGA_fiTHLOOP(int l) {
 }
 
 void play_megalovanila() {
-  delay(16000);
+  mydelay(16000);
 
   MEGA_FSTLOOP();
 
@@ -390,7 +390,7 @@ void play_megalovanila() {
 
   MEGA_fiTHLOOP(2);
 
-  delay(3000);
+  mydelay(3000);
 }
 
 void clear_display() {
