@@ -118,7 +118,7 @@ void play_prologue() {
   // 18 END
 }
 
-void one_X(int a,int b,int c){
+void shape_one_X(int a,int b,int c){
   mytone(a, 150);
   mydelay(300);
   mytone(b, 150);
@@ -127,13 +127,13 @@ void one_X(int a,int b,int c){
   mydelay(150);
 }
 
-void two_A(int a,int b,int c){
+void shape_two_A(int a,int b,int c){
   mytone(a, 450);
   mytone(b, 450);
   mytone(c, 300);
 }
 
-void two_B(int a,int b, int c){
+void shape_two_B(int a,int b, int c){
   mytone(a, 450);
   mytone(b,150);
   mydelay(300);
@@ -141,92 +141,256 @@ void two_B(int a,int b, int c){
   mydelay(150);
 }
 
-void threeLOOP(int a,int b, int c){
+void shape_threeLOOP(int a,int b, int c){
   for(int three = 0; three < 3; three++){
-      one_X(a,b,c);
+      shape_one_X(a,b,c);
     }
 }
 
-
-void FSTLOOP(int i){
+void shape_FSTLOOP(int i){
   for(int ni = 0; ni < i; ni++){
-    one_X(CoCS3,CoCS3,CoCS3);
-    one_X(CoFS2,CoFS2,CoFS2);
-    one_X(CoA2,CoA2,CoA2);
-    one_X(CoB2,CoB2,CoB2);
+    shape_one_X(CoCS3,CoCS3,CoCS3);
+    shape_one_X(CoFS2,CoFS2,CoFS2);
+    shape_one_X(CoA2,CoA2,CoA2);
+    shape_one_X(CoB2,CoB2,CoB2);
   }
 }
 
-void SNDLOOP(int i){
+void shape_SNDLOOP(int i){
   for(int nj = 0; nj < i; nj++){
-    threeLOOP(CoCS3,CoE3,CoCS3);
-    one_X(CoDS3,CoCS3,CoB2);
+    shape_threeLOOP(CoCS3,CoE3,CoCS3);
+    shape_one_X(CoDS3,CoCS3,CoB2);
   }
 }
 
-void TRDLOOP_A(int i){
+void shape_TRDLOOP_A(int i){
   for(int nk = 0; nk < i; nk++){
-    two_A(CoCS2,CoCS3,CoCS3);
-    two_A(CoFS2,CoFS3,CoFS3);
-    two_A(CoA2,CoA3,CoA3);
-    two_A(CoB2,CoB3,CoB3);
+    shape_two_A(CoCS2,CoCS3,CoCS3);
+    shape_two_A(CoFS2,CoFS3,CoFS3);
+    shape_two_A(CoA2,CoA3,CoA3);
+    shape_two_A(CoB2,CoB3,CoB3);
   }
 }
 
-void TRDLOOP_B(int i){
+void shape_TRDLOOP_B(int i){
   for(int nl = 0; nl < i; nl++){
-    one_X(CoCS2,CoCS3,CoCS3);
-    one_X(CoFS2,CoFS3,CoFS3);
-    one_X(CoA2,CoA3,CoA3);
-    one_X(CoB2,CoB3,CoB3);
+    shape_one_X(CoCS2,CoCS3,CoCS3);
+    shape_one_X(CoFS2,CoFS3,CoFS3);
+    shape_one_X(CoA2,CoA3,CoA3);
+    shape_one_X(CoB2,CoB3,CoB3);
   }
 }
 
-void TRDLOOP_C(int i){
+void shape_TRDLOOP_C(int i){
   for(int nm = 0; nm < i; nm++){
-    two_A(CoCS2,CoCS3,CoCS3);
-    two_B(CoFS2,CoFS3,CoFS3);
-    two_A(CoA2,CoA3,CoA3);
-    two_B(CoB2,CoB3,CoB3);
+    shape_two_A(CoCS2,CoCS3,CoCS3);
+    shape_two_B(CoFS2,CoFS3,CoFS3);
+    shape_two_A(CoA2,CoA3,CoA3);
+    shape_two_B(CoB2,CoB3,CoB3);
   }
 }
 
-void FTHLOOP(){
-  one_X(CoCS2,CoCS3,CoCS3);
-  one_X(CoFS2,CoFS3,CoFS3);
-  one_X(CoA2,CoA3,CoA3);
+void shape_FTHLOOP(){
+  shape_one_X(CoCS2,CoCS3,CoCS3);
+  shape_one_X(CoFS2,CoFS3,CoFS3);
+  shape_one_X(CoA2,CoA3,CoA3);
 }
 
 void play_shape_of_you() {
-  FSTLOOP(2);                 // 1 ~ 4.4
-  SNDLOOP(3);                 // 5 ~ 10.4
-  threeLOOP(CoCS3,CoE3,CoCS3);      // 11 ~ 12.2
+  shape_FSTLOOP(2);                 // 1 ~ 4.4
+  shape_SNDLOOP(3);                 // 5 ~ 10.4
+  shape_threeLOOP(CoCS3,CoE3,CoCS3);      // 11 ~ 12.2
   mytone(CoDS3, 150);           // 12.3
   mydelay(1050);
-  SNDLOOP(3);                 // 13 ~ 18.4
-  threeLOOP(CoCS3,CoE3,CoCS3);      // 19 ~ 20.2
+  shape_SNDLOOP(3);                 // 13 ~ 18.4
+  shape_threeLOOP(CoCS3,CoE3,CoCS3);      // 19 ~ 20.2
   mytone(CoDS3,150);            // 20.3
   mydelay(150);
   mytone(CoGS2,300);            
   mytone(CoB2,300);             // 20.4
   mytone(CoCS3,300);
-  SNDLOOP(4);                 // 21 ~ 28.4
-  TRDLOOP_A(4);               // 29 ~ 36.4
-  TRDLOOP_B(3);               // 37 ~ 42.4
-  FTHLOOP();                  // 44 ~ 44.2
+  shape_SNDLOOP(4);                 // 21 ~ 28.4
+  shape_TRDLOOP_A(4);               // 29 ~ 36.4
+  shape_TRDLOOP_B(3);               // 37 ~ 42.4
+  shape_FTHLOOP();                  // 44 ~ 44.2
   mytone(CoB2, 150);            // 44.3
   mydelay(1050);
-  TRDLOOP_C(3);               // 45 ~ 50.4
-  two_A(CoCS2,CoCS3,CoCS3);         // 51 ~ 51.2
-  two_A(CoFS2,CoFS3,CoFS3);         // 51.3 ~ 51.4
+  shape_TRDLOOP_C(3);               // 45 ~ 50.4
+  shape_two_A(CoCS2,CoCS3,CoCS3);         // 51 ~ 51.2
+  shape_two_A(CoFS2,CoFS3,CoFS3);         // 51.3 ~ 51.4
   mytone(CoA2, 450);
   mytone(CoA3, 450);
   mytone(CoA3, 600);
   mytone(CoGS2,300);
   mytone(CoB2,300);
   mytone(CoCS3,300);
-  TRDLOOP_C(8);
+  shape_TRDLOOP_C(8);
   mytone(CoCS3,2400);
+}
+
+void MEGA_ONELOOP(int a, int b) {
+  mytone(a, 250);
+  mytone(a, 250);
+  mytone(a, 125);
+  mytone(a, 250);
+  mytone(b, 125);
+  delay(125);
+  mytone(b, 250);
+  mytone(b, 125);
+  mytone(b, 125);
+  mytone(b, 125);
+  mytone(b, 250);
+}
+
+void MEGA_TWOLOOP(int a, int b, int c, int d) {
+  mytone(a, 250);
+  mytone(b, 250);
+  mytone(a, 125);
+  mytone(a, 125);
+  mytone(b, 125);
+  mytone(c, 250);
+  mytone(c, 125);
+  mytone(d, 125);
+  mytone(c, 125);
+  mytone(c, 125);
+  mytone(c, 125);
+  mytone(d, 250);
+}
+
+void MEGA_TRELOOP(int a) {
+  mytone(a, 250);
+  mytone(a, 250);
+  mytone(a, 125);
+  mytone(a, 250);
+  mytone(a, 250);
+  mytone(a, 250);
+  mytone(a, 125);
+  mytone(a, 125);
+  mytone(a, 125);
+  mytone(a, 250);
+}
+
+void MEGA_FSTLOOP() {
+  MEGA_ONELOOP(CoD3,CoD3);
+  MEGA_ONELOOP(CoC3,CoC3);
+  MEGA_ONELOOP(CoB2,CoB2);
+  MEGA_ONELOOP(CoAS2,CoC3);
+}
+
+void MEGA_SNDLOOP(int i) {
+  for(int ni = 0; ni < i; ni++) {
+    MEGA_TWOLOOP(CoD2,CoD3,CoD2,CoD3);
+    MEGA_TWOLOOP(CoC2,CoC3,CoC2,CoC3);
+    MEGA_TWOLOOP(CoB1,CoB2,CoB1,CoB2);
+    MEGA_TWOLOOP(CoAS1,CoAS2,CoC2,CoC3);
+  }
+}
+
+void MEGA_TRDLOOP(int j) {
+  for(int nj = 0; nj < j; nj++) {
+    MEGA_TWOLOOP(CoAS1,CoAS2,CoAS1,CoAS2);
+    MEGA_TWOLOOP(CoC2,CoC3,CoC2,CoC3);
+    MEGA_TWOLOOP(CoD2,CoD3,CoD2,CoD3);
+    MEGA_TWOLOOP(CoCS2,CoCS3,CoDS2,CoDS3);
+  }
+}
+
+void MEGA_FoTHLOOP(int k) {
+  for(int nk = 0; nk < k; nk++) {
+    MEGA_TRELOOP(CoAS1);
+    MEGA_TRELOOP(CoC2);
+    MEGA_TRELOOP(CoB1);
+    MEGA_TRELOOP(CoB1);
+    MEGA_TRELOOP(CoAS1);
+    MEGA_TRELOOP(CoC2);
+    MEGA_TRELOOP(CoD2);
+    MEGA_TRELOOP(CoD2);
+  }
+}
+
+void MEGA_fiTHLOOP(int l) {
+  for(int nl = 0; nl < l; nl++) {
+    MEGA_TWOLOOP(CoAS1,CoAS2,CoAS1,CoAS2);
+    MEGA_TWOLOOP(CoC2,CoC3,CoC2,CoC3);
+    MEGA_TWOLOOP(CoD2,CoD3,CoCS2,CoCS3);
+    MEGA_TWOLOOP(CoC2,CoC3,CoB1,CoB2);
+    MEGA_TWOLOOP(CoAS1,CoAS2,CoAS1,CoAS2);
+    MEGA_TWOLOOP(CoC2,CoC3,CoC2,CoC3);
+    MEGA_TWOLOOP(CoD2,CoD3,CoD2,CoD3);
+    MEGA_TWOLOOP(CoD2,CoD3,CoD2,CoD3);
+  }
+}
+
+void play_megalovanila() {
+  delay(16000);
+
+  MEGA_FSTLOOP();
+
+  MEGA_SNDLOOP(3);
+
+  mytone(CoD2,125);
+  mytone(CoD2,125);
+  mytone(CoD3,250);
+  mytone(CoD2,125);
+  mytone(CoD2,125);
+  mytone(CoD3,125);
+  mytone(CoD2,250);
+  mytone(CoD2,125);
+  mytone(CoD3,125);
+  mytone(CoD2,125);
+  mytone(CoD2,125);
+  mytone(CoD2,125);
+  mytone(CoD3,125);
+  mytone(CoD2,125);
+
+  mytone(CoC2,125);
+  mytone(CoC2,125);
+  mytone(CoD3,250);
+  mytone(CoC2,125);
+  mytone(CoC2,125);
+  mytone(CoD3,125);
+  mytone(CoC2,250);
+  mytone(CoC2,125);
+  mytone(CoD3,125);
+  mytone(CoC2,125);
+  mytone(CoC2,125);
+  mytone(CoC2,125);
+  mytone(CoD3,250);
+
+  mytone(CoB1,125);
+  mytone(CoB1,125);
+  mytone(CoD3,250);
+  mytone(CoB1,125);
+  mytone(CoB1,125);
+  mytone(CoD3,125);
+  mytone(CoB1,250);
+  mytone(CoB1,125);
+  mytone(CoD3,125);
+  mytone(CoB1,125);
+  mytone(CoB1,125);
+  mytone(CoB1,125);
+  mytone(CoD3,250);
+
+  mytone(CoAS1,250);
+  mytone(CoD3,250);
+  mytone(CoAS1,125);
+  mytone(CoAS1,125);
+  mytone(CoD3,125);
+  mytone(CoC2,250);
+  mytone(CoC2,125);
+  mytone(CoD3,125);
+  mytone(CoC2,125);
+  mytone(CoC2,125);
+  mytone(CoC2,125);
+  mytone(CoD3,250);
+
+  MEGA_TRDLOOP(4);
+
+  MEGA_FoTHLOOP(2);
+
+  MEGA_fiTHLOOP(2);
+
+  delay(3000);
 }
 
 void clear_display() {
@@ -285,7 +449,7 @@ void loop() {
       u8x8.print("MEGALOVANILA");
       u8x8.setCursor(7, 5);
       u8x8.print("/2:35");
-      // play_megalovanila();
+      play_megalovanila();
     }
     min = 0;
     sec = 0;
