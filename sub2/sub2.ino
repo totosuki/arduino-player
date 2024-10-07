@@ -52,7 +52,7 @@ void mydelay(int dist) {
   }
 }
 
-void one_X(int a,int b,int c){
+void shape_one_X(int a,int b,int c){
   mytone(a, 150);
   mydelay(300);
   mytone(b, 150);
@@ -61,13 +61,13 @@ void one_X(int a,int b,int c){
   mydelay(150);
 }
 
-void two_A(int a,int b,int c){
+void shape_two_A(int a,int b,int c){
   mytone(a, 450);
   mytone(b, 450);
   mytone(c, 300);
 }
 
-void two_B(int a,int b, int c){
+void shape_two_B(int a,int b, int c){
   mytone(a, 450);
   mytone(b,150);
   mydelay(300);
@@ -75,26 +75,26 @@ void two_B(int a,int b, int c){
   mydelay(150);
 }
 
-void threeLOOP(int a,int b, int c){
+void shape_threeLOOP(int a,int b, int c){
   for(int three = 0; three < 3; three++){
-      one_X(a,b,c);
+      shape_one_X(a,b,c);
     }
 }
 
-void FSTLOOP(int i){
+void  STLOOP(int i){
   for(int ni = 0; ni < i; ni++){
-    one_X(CoCS2,CoCS2,CoCS2);
-    one_X(CoFS1,CoFS1,CoFS1);
-    one_X(CoA1,CoA1,CoA1);
-    one_X(CoB2,CoB2,CoB2);
+    shape_one_X(CoCS2,CoCS2,CoCS2);
+    shape_one_X(CoFS1,CoFS1,CoFS1);
+    shape_one_X(CoA1,CoA1,CoA1);
+    shape_one_X(CoB2,CoB2,CoB2);
   }
 }
 
-void SNDLOOP(int i){
+void shape_SNDLOOP(int i){
   for(int nj = 0; nj < i; nj++){
-    one_X(CoGS2,CoGS2,CoGS2);
-    one_X(CoFS2,CoFS2,CoFS2);
-    one_X(CoA2,CoA2,CoA2);
+    shape_one_X(CoGS2,CoGS2,CoGS2);
+    shape_one_X(CoFS2,CoFS2,CoFS2);
+    shape_one_X(CoA2,CoA2,CoA2);
     mytone(CoB2, 150);
     mydelay(300);
     mytone(CoB2, 150);
@@ -102,74 +102,74 @@ void SNDLOOP(int i){
   }
 }
 
-void TRDLOOP_A(int i){
+void shape_TRDLOOP_A(int i){
   for(int nk = 0; nk < i; nk++){
-    two_A(CoCS1,CoCS2,CoCS2);
-    two_A(CoFS1,CoFS2,CoFS2);
-    two_A(CoA1,CoA2,CoA2);
-    two_A(CoB1,CoB2,CoB2);
+    shape_two_A(CoCS1,CoCS2,CoCS2);
+    shape_two_A(CoFS1,CoFS2,CoFS2);
+    shape_two_A(CoA1,CoA2,CoA2);
+    shape_two_A(CoB1,CoB2,CoB2);
   }
 }
 
-void TRDLOOP_B(int i){
+void shape_TRDLOOP_B(int i){
   for(int nl = 0; nl < i; nl++){
-    one_X(CoCS1,CoCS2,CoCS2);
-    one_X(CoFS1,CoFS2,CoFS2);
-    one_X(CoA1,CoA2,CoA2);
-    one_X(CoB1,CoB2,CoB2);
+    shape_one_X(CoCS1,CoCS2,CoCS2);
+    shape_one_X(CoFS1,CoFS2,CoFS2);
+    shape_one_X(CoA1,CoA2,CoA2);
+    shape_one_X(CoB1,CoB2,CoB2);
   }
 }
 
-void TRDLOOP_C(int i){
+void shape_TRDLOOP_C(int i){
   for(int nm = 0; nm < i; nm++){
-    two_A(CoCS1,CoCS2,CoCS2);
-    two_B(CoFS1,CoFS2,CoFS2);
-    two_A(CoA1,CoA2,CoA2);
-    two_B(CoB1,CoB2,CoB2);
+    shape_two_A(CoCS1,CoCS2,CoCS2);
+    shape_two_B(CoFS1,CoFS2,CoFS2);
+    shape_two_A(CoA1,CoA2,CoA2);
+    shape_two_B(CoB1,CoB2,CoB2);
   }
 }
 
-void FTHLOOP(){
-  one_X(CoCS1,CoCS2,CoCS2);
-  one_X(CoFS1,CoFS2,CoFS2);
-  one_X(CoA1,CoA2,CoA2);
+void shape_FTHLOOP(){
+  shape_one_X(CoCS1,CoCS2,CoCS2);
+  shape_one_X(CoFS1,CoFS2,CoFS2);
+  shape_one_X(CoA1,CoA2,CoA2);
 }
 
 void play_shape_of_you() {
-  one_X(CoGS3,CoGS3,CoGS3);
-  one_X(CoA3,CoA3,CoA3);
-  one_X(CoA3,CoA3,CoA3);
-  one_X(CoFS3,CoFS3,CoFS3);
-  FSTLOOP(1);
-  SNDLOOP(3);
-  one_X(CoGS2,CoGS2,CoGS2);
-  one_X(CoFS2,CoFS2,CoFS2);
-  one_X(CoA2,CoA2,CoA2);
+  shape_one_X(CoGS3,CoGS3,CoGS3);
+  shape_one_X(CoA3,CoA3,CoA3);
+  shape_one_X(CoA3,CoA3,CoA3);
+  shape_one_X(CoFS3,CoFS3,CoFS3);
+  shape_FSTLOOP(1);
+  shape_SNDLOOP(3);
+  shape_one_X(CoGS2,CoGS2,CoGS2);
+  shape_one_X(CoFS2,CoFS2,CoFS2);
+  shape_one_X(CoA2,CoA2,CoA2);
   mytone(CoB2, 150);
   mydelay(1050);
-  SNDLOOP(3);
-  one_X(CoGS2,CoGS2,CoGS2);
-  one_X(CoFS2,CoFS2,CoFS2);
-  one_X(CoA2,CoA2,CoA2);
+  shape_SNDLOOP(3);
+  shape_one_X(CoGS2,CoGS2,CoGS2);
+  shape_one_X(CoFS2,CoFS2,CoFS2);
+  shape_one_X(CoA2,CoA2,CoA2);
   mytone(CoB2, 150);
   mydelay(1050);
-  SNDLOOP(4);
+  shape_SNDLOOP(4);
 
-  TRDLOOP_A(4);               // 29 ~ 36.4
-  TRDLOOP_B(3);               // 37 ~ 42.4
-  FTHLOOP();                  // 44 ~ 44.2
+  shape_TRDLOOP_A(4);               // 29 ~ 36.4
+  shape_TRDLOOP_B(3);               // 37 ~ 42.4
+  shape_FTHLOOP();                  // 44 ~ 44.2
   mytone(CoB1, 150);            // 44.3
   mydelay(1050);
-  TRDLOOP_C(3);               // 45 ~ 50.4
-  two_A(CoCS1,CoCS2,CoCS2);         // 51 ~ 51.2
-  two_A(CoFS1,CoFS2,CoFS2);         // 51.3 ~ 51.4
+  shape_TRDLOOP_C(3);               // 45 ~ 50.4
+  shape_two_A(CoCS1,CoCS2,CoCS2);         // 51 ~ 51.2
+  shape_two_A(CoFS1,CoFS2,CoFS2);         // 51.3 ~ 51.4
   mytone(CoA1, 450);
   mytone(CoA2, 450);
   mytone(CoA2, 600);
   mytone(CoGS1,300);
   mytone(CoB1,300);
   mytone(CoCS2,300);
-  TRDLOOP_C(8);
+  shape_TRDLOOP_C(8);
   mytone(CoCS2,2400);
 }
 
