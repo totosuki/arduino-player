@@ -81,7 +81,7 @@ void shape_threeLOOP(int a,int b, int c){
     }
 }
 
-void  STLOOP(int i){
+void  shape_FSTLOOP(int i){
   for(int ni = 0; ni < i; ni++){
     shape_one_X(CoCS2,CoCS2,CoCS2);
     shape_one_X(CoFS1,CoFS1,CoFS1);
@@ -173,6 +173,196 @@ void play_shape_of_you() {
   mytone(CoCS2,2400);
 }
 
+void MEGA_ONELOOP(int a) {
+  if(a >= 415) {
+    mytone(a, 125);
+    mytone(a, 125);
+    mytone(CoD6, 250);
+
+    mytone(CoA5, 375);
+    mytone(CoGS5, 187.5);
+    mydelay(62.5);
+    mytone(CoG5, 250);
+    mytone(CoF5, 250);
+    mytone(CoD5, 125);
+    mytone(CoF5, 125);
+    mytone(CoG5, 125);
+  }
+  else {
+    mytone(a, 125);
+    mytone(a, 125);
+    mytone(CoD4, 250);
+
+    mytone(CoA3, 375);
+    mytone(CoGS3, 187.5);
+    mydelay(62.5);
+    mytone(CoG3, 250);
+    mytone(CoF3, 250);
+    mytone(CoD3, 125);
+    mytone(CoF3, 125);
+    mytone(CoG3, 125);
+  } 
+}
+
+void MEGA_TWOLOOP_A(int i) {
+  for(int ni = 0; ni < i; ni++) {
+    mydelay(500);
+    mytone(CoA2,375);
+    mytone(CoGS2,125);
+    mydelay(125);
+    mytone(CoG2,250);
+    mytone(CoF2,250);
+    mydelay(125);
+    mytone(CoF2,125);
+    mytone(CoG2,125);
+  }
+}
+
+void MEGA_TRELOOP(int j) {
+  for(int nj = 0; nj < j; nj++) {
+    mydelay(1000);
+    mytone(CoD4,125);
+    mytone(CoAS3,125);
+    mytone(CoD4,125);
+    mytone(CoE4,125);
+    mytone(CoF4,125);
+    mytone(CoE4,125);
+    mytone(CoD4,125);
+    mytone(CoAS3,125);
+
+    mydelay(250);
+    mytone(CoD4,250);
+    mytone(CoE4,1500);
+
+    mydelay(4000);
+
+    mytone(CoD4,250);
+    mytone(CoE4,250);
+    mytone(CoF4,250);
+    mytone(CoD5,250);
+    mytone(CoC5,500);
+    mytone(CoA4,500);
+
+    mytone(CoG4,500);
+    mytone(CoA4,500);
+    mytone(CoC5,500);
+    mytone(CoA4,500);
+
+    mytone(CoD5,1000);
+    mydelay(1000);
+
+    mytone(CoGS4,1000);
+    mytone(CoAS4,1000);
+  }
+}
+
+void MEGA_FTHLOOP(int a, int b, int c, int d) {
+  mytone(a,250);
+  mytone(a,250);
+  mytone(b,125);
+  mytone(a,250);
+  mytone(c,250);
+  mytone(c,250);
+  mytone(d,125);
+  mytone(d,125);
+  mytone(d,125);
+  mytone(c,250);
+}
+
+void MEGA_FSTLOOP_A(int k) {
+  for(int nk = 0; nk < k; nk++) {
+    MEGA_ONELOOP(CoD5);
+    MEGA_ONELOOP(CoC5);
+    MEGA_ONELOOP(CoB4);
+    MEGA_ONELOOP(CoAS4);
+  }
+}
+
+void MEGA_FSTLOOP_B(int l) {
+  for(int nl = 0; nl < l; nl++) {
+    MEGA_ONELOOP(CoD3);
+    MEGA_ONELOOP(CoC3);
+    MEGA_ONELOOP(CoD3);
+    MEGA_ONELOOP(CoD3);
+  }
+}
+
+void MEGA_SNDLOOP() {
+  MEGA_FTHLOOP(CoF3,CoAS2,CoF3,CoAS2);
+  MEGA_FTHLOOP(CoG3,CoC3,CoG3,CoC3); 
+}
+
+void MEGA_TRDLOOP(int m) {
+  for(int nm = 0; nm < m; nm++) {
+    mytone(CoD3,125);
+    mytone(CoD3,125);
+    mydelay(250);
+    mytone(CoA3,250);
+    mydelay(125);
+    mytone(CoGS3,125);
+    mydelay(125);
+    mytone(CoG3,250);
+    mytone(CoF3,250);
+    mytone(CoD3,125);
+    mytone(CoF3,125);
+    mytone(CoG3,125);
+  }
+}
+
+void play_megalovanila() {
+
+  mydelay(16000);
+
+  MEGA_FSTLOOP_A(2);
+
+  mydelay(8000);
+
+  MEGA_TWOLOOP_A(4);
+
+  MEGA_TRELOOP(2);
+
+  mydelay(16000);
+
+  MEGA_ONELOOP(CoD3);
+  MEGA_ONELOOP(CoC3);
+  MEGA_ONELOOP(CoB2);
+
+  mytone(CoB2, 125);
+  mytone(CoG3, 125);
+  mytone(CoD4, 250);
+  mytone(CoA3, 375);
+  mytone(CoGS3, 187.5);
+  mydelay(62.5);
+  mytone(CoG3, 250);
+  mytone(CoF3, 250);
+  mytone(CoD3, 125);
+  mytone(CoF3, 125);
+  mytone(CoG3, 125);
+  
+  MEGA_FSTLOOP_B(1);
+
+  MEGA_SNDLOOP();
+  
+  MEGA_FTHLOOP(CoA3,CoD3,CoGS3,CoCS3);
+  MEGA_FTHLOOP(CoG3,CoC3,CoFS3,CoB2);
+
+  MEGA_SNDLOOP();
+
+  MEGA_FTHLOOP(CoA3,CoD3,CoA3,CoD3);
+  MEGA_FTHLOOP(CoA3,CoD3,CoA3,CoD3);
+
+  MEGA_SNDLOOP();
+  
+  MEGA_FTHLOOP(CoA3,CoD3,CoGS3,CoCS3);
+  MEGA_FTHLOOP(CoG3,CoC3,CoFS3,CoB2);
+
+  MEGA_SNDLOOP();
+
+  MEGA_TRDLOOP(2);
+
+  mydelay(3000);
+}
+
 void clear_display() {
   for (int i=0;i<8;i++) {
     u8x8.setCursor(0, i);
@@ -229,7 +419,7 @@ void loop() {
       u8x8.print("MEGALOVANILA");
       u8x8.setCursor(7, 5);
       u8x8.print("/2:35");
-      // play_megalovanila();
+      play_megalovanila();
     }
     min = 0;
     sec = 0;
