@@ -780,7 +780,6 @@ void you_1() {
   you_1_1(CoDS5, CoF5, CoDS5, CoCS5); // 3
   you_1_5(CoDS5, CoGS4, CoF5, CoDS5, CoCS5);
   you_1_6(CoDS5, CoF5, CoDS5, CoCS5); // 4
-  mytone(CoCS5, 1500);
 }
 
 void you_2() {
@@ -1046,8 +1045,25 @@ void you_8() {
   mytone(CoC5, 750);
 }
 
+void you_9() {
+  you_1(); // 57,58,59,60
+  mytone(CoCS5, 750);
+  mytone(CoC4, 375);
+  mytone(CoDS, 375);
+  you_1_1(CoDS5, CoF5, CoDS5, CoCS5); // 61
+  you_1_5(CoDS5, CoGS4, CoF5, CoDS5, CoCS5);
+  you_1_3(CoDS5, CoF5, CoDS5, CoCS5); // 62
+  you_1_4(CoCS5, CoGS5, CoDS5);
+  you_1_1(CoDS5, CoF5, CoDS5, CoCS5); // 63
+  you_1_5(CoDS5, CoGS4, CoF5, CoDS5, CoCS5);
+  you_1_6(CoDS5, CoF5, CoDS5, CoCS5); // 64
+  mytone(CoCS5, 750);
+  mydelay(750);
+}
+
 void play_you() {
   you_1(); // 1
+  mytone(CoCS5, 1500);
   you_2(); // 5
   mydelay(12000); // 9
   you_3(); // 13
@@ -1056,6 +1072,7 @@ void play_you() {
   you_6(); // 33
   you_7(); // 41
   you_8(); // 49
+  you_9(); // 57
 }
 
 void clear_display() {
