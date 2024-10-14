@@ -894,8 +894,8 @@ void you_5() {
   mytone(CoCS5, 375);
   mytone(CoDS5, 750);
   mytone(CoCS5, 750);
-  mytone(CoC4, 350);
-  mytone(CoDS4, 350);
+  mytone(CoC4, 375);
+  mytone(CoDS4, 375);
 }
 
 void you_6() {
@@ -916,10 +916,135 @@ void you_6() {
   you_1_5(CoDS5, CoGS4, CoF5, CoDS5, CoCS5);
   you_1_9(CoDS5, CoF5, CoDS5, CoCS5); // 40
   mytone(CoCS5, 750);
-  mydelay(350);
-  mytone(CoGS5, 350);
+  mydelay(375);
+  mytone(CoGS5, 375);
 }
 
+void you_7() {
+  mytone(CoGS5, 375); // 41
+  mytone(CoCS6, 375);
+  mytone(CoCS6, 375);
+  mydelay(375);
+  mytone(CoDS6, 375);
+  mytone(CoCS6, 375);
+  mydelay(375);
+  mytone(CoGS5, 375);
+  mytone(CoF5, 188); // 42 // 微調整区間 375ms
+  mytone(CoFS5, 187); //
+  mytone(CoC5, 188); // 微調整区間 375ms
+  mytone(CoCS5, 187); //
+  mytone(CoDS5, 375);
+  mytone(CoFS5, 375);
+  mytone(CoF5, 375);
+  mytone(CoGS5, 375);
+  mytone(CoCS6, 375);
+  mytone(CoC6, 375);
+  mytone(CoCS6, 375); // 43
+  mytone(CoAS5, 375);
+  mydelay(375);
+  mytone(CoCS6, 375);
+  mytone(CoCS6, 375);
+  mytone(CoAS5, 375);
+  mydelay(375);
+  mytone(CoCS6, 375);
+  mytone(CoC6, 188); // 44 // 微調整区間 375ms
+  mytone(CoCS6, 187); //
+  mytone(CoDS6, 375);
+  mytone(CoDS6, 750);
+  mytone(CoF6, 188); // 微調整区間 375ms
+  mytone(CoFS6, 187); //
+  mytone(CoGS6, 375);
+  mytone(CoGS6, 375);
+  mytone(CoF6, 375);
+  mytone(CoGS6, 375); // 45
+  mytone(CoF6, 375);
+  mydelay(375);
+  mytone(CoDS6, 375);
+  mytone(CoDS6, 375);
+  mytone(CoAS5, 375);
+  mydelay(375);
+  mytone(CoCS6, 375);
+  mytone(CoC6, 188); // 46 // 微調整区間 375ms
+  mytone(CoCS6, 187); //
+  mytone(CoDS6, 375);
+  mytone(CoDS6, 375);
+  mytone(CoFS6, 375);
+  mytone(CoF6, 375);
+  mytone(CoE6, 375);
+  mytone(CoF6, 375);
+  mytone(CoDS6, 375);
+  mytone(CoF6, 375); // 47
+  mytone(CoAS6, 375);
+  mydelay(375);
+  mytone(CoF6, 375);
+  mytone(CoDS6, 375);
+  mytone(CoF6, 375);
+  mydelay(375);
+  mytone(CoDS6, 375);
+  mytone(CoDS6, 375); // 48
+  mytone(CoCS6, 750);
+  mytone(CoDS6, 375);
+  mytone(CoCS6, 750);
+  mydelay(375);
+  mytone(CoGS4, 375); 
+}
+
+void you_8() {
+  mytone(CoGS4, 375); // 49
+  mytone(CoF4, 375);
+  mytone(CoGS4, 750);
+  mydelay(375);
+  mytone(CoCS5, 375);
+  mytone(CoCS5, 375);
+  mytone(CoDS5, 375);
+  mytone(CoDS5, 375); // 50
+  mytone(CoDS5, 375);
+  mytone(CoDS5, 375);
+  mytone(CoF5, 375);
+  mytone(CoF5, 750);
+  mydelay(375);
+  mytone(CoGS4, 375);
+  mytone(CoGS4, 375); // 51
+  mytone(CoF4, 375);
+  mytone(CoGS4, 750);
+  mydelay(375);
+  mytone(CoCS5, 750);
+  mytone(CoDS5, 375);
+  mytone(CoDS5, 375); // 52
+  mytone(CoDS5, 375);
+  mytone(CoDS5, 375);
+  mytone(CoGS5, 375);
+  mytone(CoF5, 750);
+  mydelay(750);
+  mytone(CoGS4, 375); // 53
+  mytone(CoF4, 375);
+  mytone(CoGS4, 375);
+  mytone(CoGS4, 375);
+  mytone(CoCS5, 375);
+  mytone(CoCS5, 375);
+  mytone(CoCS5, 375);
+  mytone(CoDS5, 375);
+  mytone(CoDS5, 375); // 54
+  mytone(CoDS5, 375);
+  mytone(CoDS5, 375);
+  mytone(CoFS5, 375);
+  mytone(CoF5, 750);
+  mydelay(375);
+  mytone(CoGS5, 375);
+  mytone(CoGS5, 375); // 55
+  mytone(CoF5, 375);
+  mydelay(375);
+  mytone(CoGS5, 375);
+  mytone(CoGS5, 375);
+  mytone(CoCS5, 375);
+  mydelay(375);
+  mytone(CoDS5, 375);
+  mytone(CoDS5, 375); // 56
+  mytone(CoCS5, 750);
+  mytone(CoDS5, 375);
+  mytone(CoCS5, 750);
+  mytone(CoC5, 750);
+}
 
 void play_you() {
   you_1(); // 1
@@ -929,6 +1054,8 @@ void play_you() {
   you_4(); // 17
   you_5(); // 21
   you_6(); // 33
+  you_7(); // 41
+  you_8(); // 49
 }
 
 void clear_display() {
