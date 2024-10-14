@@ -758,8 +758,17 @@ void you_1() {
   mytone(CoCS5, 1500);
 }
 
+void you_2() {
+  int arr[8] = {CoF5, CoCS5, CoDS5, CoCS5, CoF5, CoCS5, CoGS5, CoCS5};
+  for (int i = 0; i < 8; i++) {
+    mytone(arr[i], 1500);
+  }
+}
+
 void play_you() {
   you_1(); // 1
+  you_2(); // 5
+  mydelay(12000); // 9
 }
 
 void clear_display() {
