@@ -747,6 +747,23 @@ void you_1_6(int a,int b,int c,int d) {
   mytone(d, 375);
 }
 
+void you_1_7(int a,int b,int c,int d) {
+  mytone(a, 563); // 微調整区間 750ms
+  mytone(a, 187); //
+  mytone(b, 188); // 微調整区間 375ms
+  mytone(c, 187); //
+  mytone(d, 188); // 微調整区間 375ms
+  mytone(d, 187); //
+}
+
+void you_1_8(int a,int b,int c,int d) {
+  mytone(a, 750);
+  mytone(b, 188); // 微調整区間 750ms
+  mytone(c, 375); //
+  mytone(d, 187); //
+  mytone(d, 750);
+}
+
 void you_1() {
   you_1_1(CoDS5, CoF5, CoDS5, CoCS5); // 1
   you_1_2(CoDS5, CoGS4, CoF5, CoDS5, CoCS5);
@@ -765,10 +782,21 @@ void you_2() {
   }
 }
 
+void you_3() {
+  you_1_3(CoDS5, CoF5, CoDS5, CoCS5); // 13
+  you_1_5(CoDS5, CoGS4, CoF5, CoDS5, CoCS5);
+  you_1_7(CoDS5, CoF5, CoDS5, CoCS5); // 14
+  you_1_4(CoCS5, CoGS5, CoDS5);
+  you_1_3(CoDS5, CoF5, CoDS5, CoCS5); // 15
+  you_1_1(CoDS5, CoF5, CoDS5, CoCS5);
+  you_1_8(CoDS5, CoF5, CoDS5, CoCS5); // 16
+}
+
 void play_you() {
   you_1(); // 1
   you_2(); // 5
   mydelay(12000); // 9
+  you_3(); // 13
 }
 
 void clear_display() {
