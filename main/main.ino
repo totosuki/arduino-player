@@ -384,7 +384,7 @@ void play_shape_of_you() {
   mytone(CoCS5, 2400);  // 70
 }
 
-void ONELOOP(int i) {
+void MEGA_ONELOOP(int i) {
   mytone(i, 125);
   mytone(i, 125);
   mytone(CoD5, 250);
@@ -399,7 +399,7 @@ void ONELOOP(int i) {
   mytone(CoG4, 125);
 }
 
-void TWOLOOP(int j,int k) {
+void MEGA_TWOLOOP(int j,int k) {
   mytone(j,250);
   mytone(j,250);
   mydelay(125);
@@ -410,16 +410,16 @@ void TWOLOOP(int j,int k) {
   mytone(k,250);
 }
 
-void FSTLOOP(int l) {
+void MEGA_FSTLOOP(int l) {
   for(int nl = 0; nl < l; nl++){
-    ONELOOP(CoD4);
-    ONELOOP(CoC4);
-    ONELOOP(CoB3);
-    ONELOOP(CoAS3);
+    MEGA_ONELOOP(CoD4);
+    MEGA_ONELOOP(CoC4);
+    MEGA_ONELOOP(CoB3);
+    MEGA_ONELOOP(CoAS3);
   }
 }
 
-void SNDLOOP(int m){
+void MEGA_SNDLOOP(int m){
   for(int nm = 0; nm < m; nm++){
     mydelay(1000);
     mytone(CoF4, 125);
@@ -488,33 +488,33 @@ void SNDLOOP(int m){
   }
 }
 
-void TRDLOOP_A(int n){
+void MEGA_TRDLOOP_A(int n){
   for(int nn = 0; nn < n; nn++){
-    TWOLOOP(CoAS3,CoAS3);
-    TWOLOOP(CoC4,CoC4);
-    TWOLOOP(CoD4,CoCS4);
-    TWOLOOP(CoC4,CoB3);
+    MEGA_TWOLOOP(CoAS3,CoAS3);
+    MEGA_TWOLOOP(CoC4,CoC4);
+    MEGA_TWOLOOP(CoD4,CoCS4);
+    MEGA_TWOLOOP(CoC4,CoB3);
   }
 }
 
-void TRDLOOP_B(int o){
+void MEGA_TRDLOOP_B(int o){
   for(int no = 0; no < o; no++){
-    TWOLOOP(CoAS3,CoAS3);
-    TWOLOOP(CoC4,CoC4);
-    TWOLOOP(CoD4,CoD4);
-    TWOLOOP(CoD4,CoD4);
+    MEGA_TWOLOOP(CoAS3,CoAS3);
+    MEGA_TWOLOOP(CoC4,CoC4);
+    MEGA_TWOLOOP(CoD4,CoD4);
+    MEGA_TWOLOOP(CoD4,CoD4);
   }
 }
 
-void TRDLOOP() {
-  TRDLOOP_A(1);
-  TRDLOOP_B(1);
-  TRDLOOP_A(1);
-  TRDLOOP_B(1);
+void MEGA_TRDLOOP() {
+  MEGA_TRDLOOP_A(1);
+  MEGA_TRDLOOP_B(1);
+  MEGA_TRDLOOP_A(1);
+  MEGA_TRDLOOP_B(1);
 }
 
 void play_megalovanila() {
-  FSTLOOP(4);
+  MEGA_FSTLOOP(4);
 
   mytone(CoF4, 250);
   mytone(CoF4, 125);
@@ -602,7 +602,7 @@ void play_megalovanila() {
   mytone(CoF5, 250);
   mytone(CoC6, 1125);
 
-  SNDLOOP(2);
+  MEGA_SNDLOOP(2);
 
   mytone(CoAS3, 1500);
   mytone(CoF4, 500);
@@ -691,14 +691,14 @@ void play_megalovanila() {
   mytone(CoA3, 125);
   mytone(CoC4, 125);
 
-  TRDLOOP();
+  MEGA_TRDLOOP();
 
-  ONELOOP(CoAS3);
-  ONELOOP(CoC4);
-  ONELOOP(CoD4);
-  ONELOOP(CoD4);
-  ONELOOP(CoAS3);
-  ONELOOP(CoC4);
+  MEGA_ONELOOP(CoAS3);
+  MEGA_ONELOOP(CoC4);
+  MEGA_ONELOOP(CoD4);
+  MEGA_ONELOOP(CoD4);
+  MEGA_ONELOOP(CoAS3);
+  MEGA_ONELOOP(CoC4);
 }
 
 void clear_display() {
