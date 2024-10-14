@@ -701,6 +701,10 @@ void play_megalovanila() {
   MEGA_ONELOOP(CoC4);
 }
 
+void play_you() {
+
+}
+
 void clear_display() {
   for (int i=0;i<8;i++) {
     u8x8.setCursor(0, i);
@@ -717,7 +721,7 @@ void setup() {
 
 void loop() {
   value = analogRead(A0);
-  value = map(value, 0, 1023, 0, 3);
+  value = map(value, 0, 1023, 0, 4);
 
   if (value != beforevalue) {
     clear_display();
@@ -733,6 +737,10 @@ void loop() {
     else if (value == 2) {
       u8x8.setCursor(2, 3);
       u8x8.print("MEGALOVANILA");
+    }
+    else if (value == 3) {
+      u8x8.setCursor(2, 3);
+      u8x8.print("    you    ");
     }
   }
 
@@ -758,6 +766,13 @@ void loop() {
       u8x8.setCursor(7, 5);
       u8x8.print("/2:35");
       play_megalovanila();
+    }
+    else if (value == 3) {
+      u8x8.setCursor(2, 2);
+      u8x8.print("    you    ");
+      u8x8.setCursor(7, 5);
+      u8x8.print("/?:??");
+      play_you();
     }
     min = 0;
     sec = 0;
