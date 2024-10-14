@@ -10,6 +10,7 @@ int value = 0;
 int min = 0;
 int sec = 0;
 int buffer = 0;
+int bits[4] = {8, 4, 2, 1};
 
 void mytone(int freq, int dist) {
   tone(5, freq * 4, dist - 10);
@@ -708,11 +709,35 @@ void clear_display() {
   }
 }
 
+void send_bit(int num) {
+  int numbers[4];
+  for (int i = 0; i < 4; i++) {
+    if (num - bits[i] >= 0) {
+      num -= bits[i];
+      numbers[i] = 1;
+    }
+    else {
+      numbers[i] = 0;
+    }
+  }
+
+  digitalWrite(2, 1);
+
+  for (int i = 0; i < 4; i++) {
+    unsigned long st = millis();
+    while (millis() - st < 200) {
+      digitalWrite(2, numbers[i]);
+    }
+  }
+  delay(250);
+}
+
 void setup() {
   Serial.begin(9600);
   u8x8.begin();
   u8x8.setFlipMode(1);
   u8x8.setFont(u8x8_font_8x13B_1x2_f);
+  pinMode(2, OUTPUT);
 }
 
 void loop() {
@@ -743,6 +768,7 @@ void loop() {
       u8x8.print("  Prologue  ");
       u8x8.setCursor(7, 5);
       u8x8.print("/0:31");
+      send_bit(0); // 4bit文まで
       play_prologue();
     }
     else if (value  == 1) {
@@ -750,6 +776,7 @@ void loop() {
       u8x8.print("Shape of You");
       u8x8.setCursor(7, 5);
       u8x8.print("/2:45");
+      send_bit(1);
       play_shape_of_you();
     }
     else if (value == 2) {
@@ -757,6 +784,7 @@ void loop() {
       u8x8.print("MEGALOVANILA");
       u8x8.setCursor(7, 5);
       u8x8.print("/2:35");
+      send_bit(2);
       play_megalovanila();
     }
     min = 0;

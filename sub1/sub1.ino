@@ -6,10 +6,12 @@ U8X8_SSD1306_128X64_NONAME_HW_I2C u8x8(U8X8_PIN_NONE);
 
 int beforevalue = -1;
 int value = 0;
+int music = 0;
 
 int min = 0;
 int sec = 0;
 int buffer = 0;
+int bits[4] = {8, 4, 2, 1};
 
 void mytone(int freq, int dist) {
   tone(5, freq * 4, dist - 10);
@@ -405,12 +407,63 @@ void setup() {
   u8x8.begin();
   u8x8.setFlipMode(1);
   u8x8.setFont(u8x8_font_8x13B_1x2_f);
+  pinMode(2, OUTPUT);
+  pinMode(3, INPUT);
 }
 
-void loop() {
-  value = analogRead(A0);
-  value = map(value, 0, 1023, 0, 3);
+int listen_number() {
+  int musicnumber = 0;
+  int numbers[4];
 
+  for (int i = 0; i < 4; i++) {
+    delay(100);
+    numbers[i] = digitalRead(3);
+    delay(100);
+  }
+
+  for (int i = 0; i < 4; i++) {
+    Serial.println(numbers[i]);
+  }
+
+  for (int i = 0; i < 4; i++) {
+    musicnumber += numbers[i] * bits[i];
+  }
+
+  return musicnumber;
+}
+
+
+void loop() {
+  if (digitalRead(3) == 1) {
+    music = listen_number();
+
+    clear_display();
+    if (music == 0) {
+      u8x8.setCursor(2, 2);
+      u8x8.print("  Prologue  ");
+      u8x8.setCursor(7, 5);
+      u8x8.print("/0:31");
+      play_prologue();
+    }
+    else if (music  == 1) {
+      u8x8.setCursor(2, 2);
+      u8x8.print("Shape of You");
+      u8x8.setCursor(7, 5);
+      u8x8.print("/2:45");
+      play_shape_of_you();
+    }
+    else if (music == 2) {
+      u8x8.setCursor(2, 2);
+      u8x8.print("MEGALOVANILA");
+      u8x8.setCursor(7, 5);
+      u8x8.print("/2:35");
+      play_megalovanila();
+    }
+    min = 0;
+    sec = 0;
+  }
+
+  /*
   if (value != beforevalue) {
     clear_display();
 
@@ -427,33 +480,5 @@ void loop() {
       u8x8.print("MEGALOVANILA");
     }
   }
-
-  if (digitalRead(6) == 1) {
-    clear_display();
-    if (value == 0) {
-      u8x8.setCursor(2, 2);
-      u8x8.print("  Prologue  ");
-      u8x8.setCursor(7, 5);
-      u8x8.print("/0:31");
-      play_prologue();
-    }
-    else if (value  == 1) {
-      u8x8.setCursor(2, 2);
-      u8x8.print("Shape of You");
-      u8x8.setCursor(7, 5);
-      u8x8.print("/2:45");
-      play_shape_of_you();
-    }
-    else if (value == 2) {
-      u8x8.setCursor(2, 2);
-      u8x8.print("MEGALOVANILA");
-      u8x8.setCursor(7, 5);
-      u8x8.print("/2:35");
-      play_megalovanila();
-    }
-    min = 0;
-    sec = 0;
-  }
-
-  beforevalue = value;
+  */
 }
