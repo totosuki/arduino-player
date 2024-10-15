@@ -1049,7 +1049,7 @@ void you_9() {
   you_1(); // 57,58,59,60
   mytone(CoCS5, 750);
   mytone(CoC4, 375);
-  mytone(CoDS, 375);
+  mytone(CoDS4, 375);
   you_1_1(CoDS5, CoF5, CoDS5, CoCS5); // 61
   you_1_5(CoDS5, CoGS4, CoF5, CoDS5, CoCS5);
   you_1_3(CoDS5, CoF5, CoDS5, CoCS5); // 62
@@ -1059,6 +1059,76 @@ void you_9() {
   you_1_6(CoDS5, CoF5, CoDS5, CoCS5); // 64
   mytone(CoCS5, 750);
   mydelay(750);
+}
+
+void you_10() {
+  mytone(CoDS5, 375); // 65
+  mytone(CoF5, 375);
+  mytone(CoDS5, 375);
+  mytone(CoF5, 375);
+  mytone(CoAS5, 188); // 微調整区間 375ms
+  mytone(CoF5, 187); // 
+  mytone(CoF5, 188); // 微調整区間 375ms
+  mytone(CoDS5, 187); //
+  mytone(CoF5, 750);
+  mytone(CoF5, 375); // 66
+  mytone(CoDS5, 375);
+  mytone(CoCS5, 375);
+  mytone(CoGS5, 375);
+  mytone(CoF5, 750);
+  mytone(CoF4, 750);
+  mytone(CoDS5, 375); // 67
+  mytone(CoF5, 375);
+  mytone(CoDS5, 375);
+  mytone(CoF5, 375);
+  mytone(CoAS5, 188); // 微調整区間 375ms
+  mytone(CoF5, 187); //
+  mytone(CoF5, 188); // 微調整区間 375ms
+  mytone(CoDS5, 187); //
+  mytone(CoF5, 375);
+  mytone(CoDS5, 375);
+  mytone(CoDS5, 375); // 68
+  mytone(CoDS5, 375);
+  mytone(CoCS5, 375);
+  mytone(CoDS5, 375);
+  mytone(CoCS5, 750);
+  mytone(CoDS5, 108); // 微調整区間　750ms
+  mytone(CoF5, 107); //
+  mytone(CoFS5, 107); //
+  mytone(CoGS5, 107); //
+  mytone(CoAS5, 107); //
+  mytone(CoC6, 107); //
+  mytone(CoCS6, 107); //
+  mytone(CoD6, 375); // 69
+  mytone(CoF5, 375);
+  mytone(CoDS5, 375);
+  mytone(CoF5, 375);
+  mytone(CoAS5, 188); // 微調整区間 375ms
+  mytone(CoF5, 187); //
+  mytone(CoF5, 188); // 微調整区間 375ms
+  mytone(CoDS5, 187); //
+  mytone(CoF5, 750);
+  mytone(CoF5, 375); // 70
+  mytone(CoDS5, 375);
+  mytone(CoCS5, 375);
+  mytone(CoGS5, 375);
+  mytone(CoF5, 750);
+  mytone(CoF4, 750);
+  mytone(CoDS5, 375); // 71
+  mytone(CoF5, 375);
+  mytone(CoDS5, 375);
+  mytone(CoF5, 375);
+  mytone(CoAS5, 188); // 微調整区間 375ms
+  mytone(CoF5, 187); //
+  mytone(CoF5, 188); // 微調整区間 375ms
+  mytone(CoDS5, 187); //
+  mytone(CoF5, 375);
+  mytone(CoDS5, 375);
+  mytone(CoDS5, 375); // 72
+  mytone(CoDS5, 375);
+  mytone(CoCS5, 375);
+  mytone(CoDS5, 375);
+  mytone(CoCS5, 375);
 }
 
 void play_you() {
@@ -1073,6 +1143,7 @@ void play_you() {
   you_7(); // 41
   you_8(); // 49
   you_9(); // 57
+  you_10(); // 65
 }
 
 void clear_display() {
