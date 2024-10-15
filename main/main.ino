@@ -1129,6 +1129,7 @@ void you_10() {
   mytone(CoCS5, 375);
   mytone(CoDS5, 375);
   mytone(CoCS5, 375);
+  mydelay(750);
 }
 
 void play_you() {
@@ -1144,6 +1145,7 @@ void play_you() {
   you_8(); // 49
   you_9(); // 57
   you_10(); // 65
+  mydelay(12000); // 73,74,75,76
 }
 
 void clear_display() {
