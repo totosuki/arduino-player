@@ -1214,7 +1214,7 @@ void loop() {
       u8x8.setCursor(2, 2);
       u8x8.print("    you    ");
       u8x8.setCursor(7, 5);
-      u8x8.print("/?:??");
+      u8x8.print("/3:48");
       play_you();
     }
     min = 0;
